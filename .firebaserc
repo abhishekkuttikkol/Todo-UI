@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "todo-ui-9746"
+  },
+  "targets": {
+    "todo-ui-9746": {
+      "hosting": {
+        "Todo-UI": [
+          "todo-ui-9746"
+        ]
+      }
+    }
+  }
+}
