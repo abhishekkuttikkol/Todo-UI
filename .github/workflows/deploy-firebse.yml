@@ -1,26 +1,19 @@
-name: Build and Deploy to Firebase
 
-on:
+name: Deploy to Firebase Hosting on merge
+'on':
   push:
     branches:
       - master
-
 jobs:
-  build:
-    name: Build and Deploy
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: Initialize Node
-        uses: actions/setup-node@master
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Deploy
-        uses: w9jds/firebase-action@master
+      - uses: actions/checkout@v2
+      - run: 'npm install'
+      - run: 'npm run build'
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          channelId: live
+          projectId: todo-ui-9746
