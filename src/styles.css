@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    background-image: url('https://source.unsplash.com/random/1400x600/?landscape');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
