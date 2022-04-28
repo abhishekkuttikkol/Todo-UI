@@ -2,10 +2,10 @@
 *{
     padding: 0;
     margin: 0;
-    background-image: url('https://source.unsplash.com/random/1400x600/?landscape');
+    background-image: url('https://cdn.wallpapersafari.com/70/16/L7n5w0.jpg');
     background-size: cover;
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
