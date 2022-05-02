@@ -3,22 +3,14 @@
 </div>
 <div class="body-container">
     <div class="todo-container">
-        <div class="input-container">
-            <input type="text">
-            <button>+</button>
+        <div [formGroup]="todoInputForm" class="input-container">
+            <input formControlName="input" type="text">
+            <button (click)="addTodo()">+</button>
         </div>
         <div class="todo-content">
-            <div class="todos">
+            <div *ngFor="let todo of todos" class="todos">
                 <input type="checkbox" name="" id="">
-                <h3>Go for cycling</h3>
-            </div>
-            <div class="todos">
-                <input type="checkbox" name="" id="">
-                <h3>go to Gym</h3>
-            </div>
-            <div class="todos">
-                <input type="checkbox" name="" id="">
-                <h3>Make todo App</h3>
+                <h3>{{ todo }}</h3>
             </div>
         </div>
     </div>
